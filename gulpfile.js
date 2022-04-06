@@ -92,7 +92,7 @@ export const scss = () => gulp
       specialComments: 0,
     }
   })))
-  .pipe(rename({suffix: '.min'}))
+  .pipe(rename({ suffix: '.min' }))
   .pipe(gulpif(dev, sourcemaps.write()))
   .pipe(gulp.dest(path.dist.css))
   .pipe(browserSync.stream());
@@ -117,7 +117,7 @@ if (!dev) {
     test: /\.(js)$/,
     exclude: /(node_modules)/,
     loader: 'babel-loader',
-    options:{
+    options: {
       presets: ['@babel/preset-env'],
       plugins: ['@babel/plugin-transform-runtime']
     }
@@ -152,7 +152,7 @@ const image = () => gulp
   .pipe(gulp.dest(path.dist.img))
   .pipe(browserSync.stream({
     once: true,
-    })
+  })
   );
 
 const webp = () => gulp
@@ -162,8 +162,8 @@ const webp = () => gulp
   }))
   .pipe(gulp.dest(path.dist.img))
   .pipe(browserSync.stream({
-      once: true,
-    })
+    once: true,
+  })
   );
 
 export const avif = () => gulp
@@ -173,8 +173,8 @@ export const avif = () => gulp
   }))
   .pipe(gulp.dest(path.dist.img))
   .pipe(browserSync.stream({
-      once: true,
-    })
+    once: true,
+  })
   );
 
 export const copy = () => gulp
@@ -183,8 +183,8 @@ export const copy = () => gulp
   })
   .pipe(gulp.dest(path.dist.base))
   .pipe(browserSync.stream({
-      once: true,
-    })
+    once: true,
+  })
   );
 
 
